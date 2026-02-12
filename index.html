@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Linux Distributions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .distros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .distro-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .distro-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .distro-logo {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .distro-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 8px;
+        }
+
+        .distro-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .distro-link {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .distro-link:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .distros-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐧 Famous Linux Distributions</h1>
+            <p class="subtitle">A comprehensive list of popular Linux distros with their official websites</p>
+        </header>
+
+        <div class="distros-grid">
+            <div class="distro-card">
+                <img src="https://www.ubuntu.com/assets/c7e79f7c-c147-45d6-bbfc-1800329e647e-w100.png" alt="Ubuntu Logo" class="distro-logo">
+                <div class="distro-name">Ubuntu</div>
+                <div class="distro-description">The most popular desktop and server Linux distribution, known for ease of use and regular releases.</div>
+                <a href="https://ubuntu.com" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.debian.org/logos/openlogo-nd.svg" alt="Debian Logo" class="distro-logo">
+                <div class="distro-name">Debian</div>
+                <div class="distro-description">One of the oldest and most stable Linux distributions, known for its reliability and extensive package library.</div>
+                <a href="https://www.debian.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://getfedora.org/static/images/logo.png" alt="Fedora Logo" class="distro-logo">
+                <div class="distro-name">Fedora</div>
+                <div class="distro-description">A community-driven distribution sponsored by Red Hat, known for cutting-edge features and latest software.</div>
+                <a href="https://fedoraproject.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.centos.org/images/logo.svg" alt="CentOS Logo" class="distro-logo">
+                <div class="distro-name">CentOS</div>
+                <div class="distro-description">A free, enterprise-class distribution built from Red Hat Enterprise Linux sources, ideal for servers.</div>
+                <a href="https://www.centos.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://archlinux.org/static/logos/archlinux-logo.svg" alt="Arch Linux Logo" class="distro-logo">
+                <div class="distro-name">Arch Linux</div>
+                <div class="distro-description">A lightweight, flexible distribution that follows a rolling-release model for the latest software.</div>
+                <a href="https://archlinux.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.linuxmint.com/logo.png" alt="Linux Mint Logo" class="distro-logo">
+                <div class="distro-name">Linux Mint</div>
+                <div class="distro-description">Based on Ubuntu, designed to be elegant, easy to use, and beginner-friendly with pre-installed media codecs.</div>
+                <a href="https://linuxmint.com" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.opensuse.org/assets/img/splash-y.svg" alt="openSUSE Logo" class="distro-logo">
+                <div class="distro-name">openSUSE</div>
+                <div class="distro-description">A stable, free distribution maintained by the openSUSE community and sponsored by SUSE.</div>
+                <a href="https://www.opensuse.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://manjaro.org/assets/img/manjaro-logo.svg" alt="Manjaro Logo" class="distro-logo">
+                <div class="distro-name">Manjaro</div>
+                <div class="distro-description">Based on Arch Linux, offering accessibility to new users while maintaining Arch's philosophy and power.</div>
+                <a href="https://manjaro.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://pop.system76.com/_static/images/pop-logo.svg" alt="Pop!_OS Logo" class="distro-logo">
+                <div class="distro-name">Pop!_OS</div>
+                <div class="distro-description">Developed by System76, optimized for hardware and software compatibility with a focus on user experience.</div>
+                <a href="https://pop.system76.com" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://elementary.io/images/logo.svg" alt="Elementary OS Logo" class="distro-logo">
+                <div class="distro-name">Elementary OS</div>
+                <div class="distro-description">A visually stunning distribution based on Ubuntu, known for its beautiful design and intuitive interface.</div>
+                <a href="https://elementary.io" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.kali.org/images/kali-linux-logo.svg" alt="Kali Linux Logo" class="distro-logo">
+                <div class="distro-name">Kali Linux</div>
+                <div class="distro-description">Based on Debian, specifically designed for penetration testing and security research with pre-installed tools.</div>
+                <a href="https://www.kali.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.gentoo.org/assets/img/logo/gentoo-signet.svg" alt="Gentoo Logo" class="distro-logo">
+                <div class="distro-name">Gentoo</div>
+                <div class="distro-description">A highly customizable distribution where you compile everything from source for optimal performance.</div>
+                <a href="https://www.gentoo.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://almalinux.org/assets/img/almalinux-logo.svg" alt="AlmaLinux Logo" class="distro-logo">
+                <div class="distro-name">AlmaLinux</div>
+                <div class="distro-description">A community-driven, free and open-source replacement for CentOS with long-term support.</div>
+                <a href="https://almalinux.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://rockylinux.org/images/rocky-linux-logo.svg" alt="Rocky Linux Logo" class="distro-logo">
+                <div class="distro-name">Rocky Linux</div>
+                <div class="distro-description">A community-supported enterprise distribution, a successor to CentOS with strong stability and support.</div>
+                <a href="https://rockylinux.org" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+
+            <div class="distro-card">
+                <img src="https://www.redhat.com/cms/managed-files/Logo-Red-Hat-A-Standard-RGB_0.svg" alt="Red Hat Logo" class="distro-logo">
+                <div class="distro-name">Red Hat Enterprise Linux</div>
+                <div class="distro-description">A premium, commercial Linux distribution trusted by enterprises for mission-critical workloads.</div>
+                <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" target="_blank" class="distro-link">Visit Website</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
