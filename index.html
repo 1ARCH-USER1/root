@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Famous Linux Distributions</title>
+    <title>Alex Mitchell - Full Stack Developer</title>
     <style>
         * {
             margin: 0;
@@ -13,220 +13,551 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
         }
 
-        .container {
-            max-width: 1000px;
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            font-size: 18px;
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
             opacity: 0.9;
         }
 
-        .distros-grid {
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #667eea;
+        }
+
+        /* About Section */
+        .about .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #f8f9fa;
+        }
+
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
-        .distro-card {
+        .project-card {
             background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
         }
 
-        .distro-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .distro-logo {
+        .project-img {
             width: 100%;
             height: 200px;
-            object-fit: contain;
-            margin-bottom: 20px;
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .distro-name {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1e3c72;
-            margin-bottom: 8px;
-        }
-
-        .distro-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .distro-link {
-            display: inline-block;
-            padding: 12px 20px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            text-decoration: none;
-            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: bold;
-            transition: all 0.3s ease;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             text-align: center;
         }
 
-        .distro-link:hover {
-            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
-            transform: scale(1.05);
+        .contact h2 {
+            color: white;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 28px;
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
             }
 
-            .distros-grid {
+            .btn-secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about .content {
                 grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🐧 Famous Linux Distributions</h1>
-            <p class="subtitle">A comprehensive list of popular Linux distros with their official websites</p>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">AM</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <div class="distros-grid">
-            <div class="distro-card">
-                <img src="https://www.ubuntu.com/assets/c7e79f7c-c147-45d6-bbfc-1800329e647e-w100.png" alt="Ubuntu Logo" class="distro-logo">
-                <div class="distro-name">Ubuntu</div>
-                <div class="distro-description">The most popular desktop and server Linux distribution, known for ease of use and regular releases.</div>
-                <a href="https://ubuntu.com" target="_blank" class="distro-link">Visit Website</a>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Alex Mitchell</h1>
+            <p>Full Stack Developer | UI/UX Enthusiast | Problem Solver</p>
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </section>
 
-            <div class="distro-card">
-                <img src="https://www.debian.org/logos/openlogo-nd.svg" alt="Debian Logo" class="distro-logo">
-                <div class="distro-name">Debian</div>
-                <div class="distro-description">One of the oldest and most stable Linux distributions, known for its reliability and extensive package library.</div>
-                <a href="https://www.debian.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://getfedora.org/static/images/logo.png" alt="Fedora Logo" class="distro-logo">
-                <div class="distro-name">Fedora</div>
-                <div class="distro-description">A community-driven distribution sponsored by Red Hat, known for cutting-edge features and latest software.</div>
-                <a href="https://fedoraproject.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://www.centos.org/images/logo.svg" alt="CentOS Logo" class="distro-logo">
-                <div class="distro-name">CentOS</div>
-                <div class="distro-description">A free, enterprise-class distribution built from Red Hat Enterprise Linux sources, ideal for servers.</div>
-                <a href="https://www.centos.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://archlinux.org/static/logos/archlinux-logo.svg" alt="Arch Linux Logo" class="distro-logo">
-                <div class="distro-name">Arch Linux</div>
-                <div class="distro-description">A lightweight, flexible distribution that follows a rolling-release model for the latest software.</div>
-                <a href="https://archlinux.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://www.linuxmint.com/logo.png" alt="Linux Mint Logo" class="distro-logo">
-                <div class="distro-name">Linux Mint</div>
-                <div class="distro-description">Based on Ubuntu, designed to be elegant, easy to use, and beginner-friendly with pre-installed media codecs.</div>
-                <a href="https://linuxmint.com" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://www.opensuse.org/assets/img/splash-y.svg" alt="openSUSE Logo" class="distro-logo">
-                <div class="distro-name">openSUSE</div>
-                <div class="distro-description">A stable, free distribution maintained by the openSUSE community and sponsored by SUSE.</div>
-                <a href="https://www.opensuse.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://manjaro.org/assets/img/manjaro-logo.svg" alt="Manjaro Logo" class="distro-logo">
-                <div class="distro-name">Manjaro</div>
-                <div class="distro-description">Based on Arch Linux, offering accessibility to new users while maintaining Arch's philosophy and power.</div>
-                <a href="https://manjaro.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://pop.system76.com/_static/images/pop-logo.svg" alt="Pop!_OS Logo" class="distro-logo">
-                <div class="distro-name">Pop!_OS</div>
-                <div class="distro-description">Developed by System76, optimized for hardware and software compatibility with a focus on user experience.</div>
-                <a href="https://pop.system76.com" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://elementary.io/images/logo.svg" alt="Elementary OS Logo" class="distro-logo">
-                <div class="distro-name">Elementary OS</div>
-                <div class="distro-description">A visually stunning distribution based on Ubuntu, known for its beautiful design and intuitive interface.</div>
-                <a href="https://elementary.io" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://www.kali.org/images/kali-linux-logo.svg" alt="Kali Linux Logo" class="distro-logo">
-                <div class="distro-name">Kali Linux</div>
-                <div class="distro-description">Based on Debian, specifically designed for penetration testing and security research with pre-installed tools.</div>
-                <a href="https://www.kali.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://www.gentoo.org/assets/img/logo/gentoo-signet.svg" alt="Gentoo Logo" class="distro-logo">
-                <div class="distro-name">Gentoo</div>
-                <div class="distro-description">A highly customizable distribution where you compile everything from source for optimal performance.</div>
-                <a href="https://www.gentoo.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://almalinux.org/assets/img/almalinux-logo.svg" alt="AlmaLinux Logo" class="distro-logo">
-                <div class="distro-name">AlmaLinux</div>
-                <div class="distro-description">A community-driven, free and open-source replacement for CentOS with long-term support.</div>
-                <a href="https://almalinux.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://rockylinux.org/images/rocky-linux-logo.svg" alt="Rocky Linux Logo" class="distro-logo">
-                <div class="distro-name">Rocky Linux</div>
-                <div class="distro-description">A community-supported enterprise distribution, a successor to CentOS with strong stability and support.</div>
-                <a href="https://rockylinux.org" target="_blank" class="distro-link">Visit Website</a>
-            </div>
-
-            <div class="distro-card">
-                <img src="https://www.redhat.com/cms/managed-files/Logo-Red-Hat-A-Standard-RGB_0.svg" alt="Red Hat Logo" class="distro-logo">
-                <div class="distro-name">Red Hat Enterprise Linux</div>
-                <div class="distro-description">A premium, commercial Linux distribution trusted by enterprises for mission-critical workloads.</div>
-                <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" target="_blank" class="distro-link">Visit Website</a>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="content">
+                <div class="about-img">🚀 Creative Developer</div>
+                <div class="about-text">
+                    <h3>Hi! I'm Alex</h3>
+                    <p>I'm a passionate full-stack developer based in San Francisco with 5+ years of experience building web applications that users love. I specialize in creating scalable backend systems and responsive frontend interfaces.</p>
+                    <p>When I'm not coding, you can find me contributing to open-source projects, writing technical blogs, or exploring the latest web technologies. I'm driven by the challenge of solving complex problems and creating elegant solutions.</p>
+                    <p>I believe in writing clean, maintainable code and following best practices. My goal is to help businesses achieve their digital transformation through innovative technology solutions.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">E-Commerce Platform</div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A fully functional online store with product catalog, shopping cart, and payment integration. Built with modern web technologies and optimized for performance.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">Task Management App</div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>Real-time collaborative task management application with team features, notifications, and analytics dashboard. Supports both desktop and mobile devices.</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">WebSocket</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">Analytics Dashboard</div>
+                    <div class="project-content">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Interactive data visualization dashboard for business intelligence. Features real-time data updates, custom reports, and export functionality.</p>
+                        <div class="project-tags">
+                            <span class="tag">D3.js</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">Social Media API</div>
+                    <div class="project-content">
+                        <h3>Social Media API</h3>
+                        <p>RESTful API for a social networking platform with authentication, user profiles, messaging, and feed generation capabilities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Express.js</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">Weather Application</div>
+                    <div class="project-content">
+                        <h3>Weather Application</h3>
+                        <p>Progressive Web App for weather forecasting with location-based services, push notifications, and offline functionality.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PWA</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">Design System</div>
+                    <div class="project-content">
+                        <h3>Design System Library</h3>
+                        <p>Comprehensive component library with documentation and interactive examples. Includes 50+ reusable components adhering to modern design principles.</p>
+                        <div class="project-tags">
+                            <span class="tag">Storybook</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Figma</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React & Vue.js</li>
+                        <li>Responsive Design</li>
+                        <li>Web Performance</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <ul class="skill-list">
+                        <li>Node.js & Express</li>
+                        <li>Python & Django</li>
+                        <li>RESTful APIs</li>
+                        <li>Microservices</li>
+                        <li>Security Best Practices</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Database & Tools</h3>
+                    <ul class="skill-list">
+                        <li>MongoDB & SQL</li>
+                        <li>PostgreSQL</li>
+                        <li>Redis & Caching</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>Git & CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Other Skills</h3>
+                    <ul class="skill-list">
+                        <li>AWS & Cloud Services</li>
+                        <li>UI/UX Design</li>
+                        <li>Team Leadership</li>
+                        <li>Technical Documentation</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="margin-bottom: 40px; font-size: 18px;">I'm always interested in hearing about new projects and opportunities.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:alex.mitchell@techmail.com">alex.mitchell@techmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="#">linkedin.com/in/alexmitchell</a>
+                </div>
+                <div class="contact-item">
+                    <h3>🐙 GitHub</h3>
+                    <a href="#">github.com/alexmitchell</a>
+                </div>
+            </div>
+            <a href="mailto:alex.mitchell@techmail.com" class="btn">Send Me an Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Alex Mitchell. All rights reserved.</p>
+    </footer>
 </body>
 </html>
